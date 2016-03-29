@@ -16,6 +16,7 @@
 
 package com.codetroopers.betterpickers.timezonepicker;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.TextUtils;
@@ -120,6 +121,7 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
         return position;
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v;
@@ -134,7 +136,7 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
         ViewHolder vh = (ViewHolder) v.getTag();
 
         if (position >= mLiveResults.size()) {
-            Log.e(TAG, "getView: " + position + " of " + mLiveResults.size());
+            Log.e(TAG, "getView: " + position + " " + mLiveResults.size());
         }
 
         FilterTypeResult filter = mLiveResults.get(position);
@@ -179,6 +181,7 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
 
     private class ArrayFilter extends Filter {
 
+        @SuppressLint("LongLogTag")
         @Override
         protected FilterResults performFiltering(CharSequence prefix) {
             if (DEBUG) {
@@ -351,6 +354,7 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
          *
          * @return Integer.MIN_VALUE as invalid
          */
+        @SuppressLint("LongLogTag")
         public int parseNum(String str, int startIndex) {
             int idx = startIndex;
             int num = Integer.MIN_VALUE;
@@ -402,6 +406,7 @@ public class TimeZoneFilterTypeAdapter extends BaseAdapter implements Filterable
             return negativeMultiplier * num;
         }
 
+        @SuppressLint("LongLogTag")
         @SuppressWarnings("unchecked")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults

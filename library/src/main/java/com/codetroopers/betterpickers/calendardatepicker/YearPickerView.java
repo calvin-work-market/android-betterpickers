@@ -53,9 +53,9 @@ public class YearPickerView extends ListView implements OnItemClickListener, OnD
     private int mBackgroundColor;
 
     public void setTheme(TypedArray themeColors) {
-        mBackgroundColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpMainColor2, R.color.circle_background);
-        mCircleColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpAccentColor, R.color.bpBlue);
-        mTextColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpMainTextColor, R.color.ampm_text_color);
+        mBackgroundColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpMainColor2, getResources().getColor(R.color.circle_background));
+        mCircleColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpAccentColor, getResources().getColor(R.color.bpBlue));
+        mTextColor = themeColors.getColor(R.styleable.BetterPickersDialog_bpMainTextColor, getResources().getColor(R.color.ampm_text_color));
     }
 
     /**
